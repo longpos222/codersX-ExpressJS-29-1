@@ -1,10 +1,11 @@
-# codersX-ExpressJS-28
-### BÀI 1
-Khi code server của bạn có lỗi gì đó như truy cập một property nào đó của một giá trị undefined, nó sẽ throw lỗi và server sẽ tự động render trang error cho status 500.
-1. Thử viết đoạn code sau vào một controller bất kì var a; a.b();
-2. Mở route tương ứng trên trình duyệt xem lỗi ra sao
-3. Viết 1 trang hiển thị lỗi 500 một cách đẹp mắt hơn
-=========================  
+# codersX-ExpressJS-29-1
+### BÀI 1 
+Đưa toàn bộ source code bạn đã làm lên github và deploy lên heroku. Gửi đường link tới website host trên heroku của bạn, dạng xxx.herokuapp.com. (đừng gửi link phải đăng nhập nha).  
 
-**Screenshot:**
-![Image](public/images/ScreenShot2020-09-01at2.14.00PM.png)
+=========================
+
+Link deploy lên Heroku: https://codersx-expressjs-29-1.herokuapp.com  
+User: sau  
+Pass: 123456
+
+ 
