@@ -49,6 +49,9 @@ app.use(express.static("public"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use("/api/books", apiBookRoute);
+
 app.use(cookieParser(process.env.SIGNED_COOKIE_KEY));
 app.use(sessionMiddleware.create);
 
@@ -62,6 +65,6 @@ app.use("/cart", cartRoute);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/auth", apiAuthRoute);
 app.use("/api/transactions", apiAuthMiddleware, apiTransactionRoute);
-app.use("/api/books", apiBookRoute);
+
 
 app.listen(port, () => console.log(`OK ${port}`));
