@@ -29,8 +29,10 @@ const transactionRoute = require("./routers/transaction.route.js");
 const userRoute = require("./routers/user.route.js");
 const authRoute = require("./routers/auth.route.js");
 const cartRoute = require("./routers/cart.route.js");
-const apiTransactionRoute = require("./api/routers/transaction.route.js");
+
 const apiAuthRoute = require("./api/routers/auth.route.js");
+const apiTransactionRoute = require("./api/routers/transaction.route.js");
+const apiBookRoute = require("./api/routers/book.route.js");
 
 const sessionMiddleware = require("./middlewares/session.middleware");
 const authMiddleware = require("./middlewares/auth.middleware");
@@ -60,5 +62,6 @@ app.use("/cart", cartRoute);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/auth", apiAuthRoute);
 app.use("/api/transactions", apiAuthMiddleware, apiTransactionRoute);
+app.use("/api/books", apiBookRoute);
 
 app.listen(port, () => console.log(`OK ${port}`));
