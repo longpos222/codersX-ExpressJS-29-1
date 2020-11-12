@@ -7,9 +7,9 @@ module.exports.index = async (req, res) => {
   if (!q) {
     res.json(books);
   } else {
-    await books.filter((book) => {
+    let filterBooks = await books.filter((book) => {
       return book.title.indexOf(q) >= 0;
     });
-    res.json(books);
+    res.json(filterBooks);
   }
 };
