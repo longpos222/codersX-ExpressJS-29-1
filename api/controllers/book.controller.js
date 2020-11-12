@@ -1,7 +1,5 @@
 const Book = require("../../models/book.model.js");
 
-const tools = require("../../tools/page.tool.js");
-
 module.exports.index = async (req, res) => {
   var q = req.query.q;
   var books = await Book.find({});
@@ -9,7 +7,7 @@ module.exports.index = async (req, res) => {
   if (!q) {
     res.json(books);
   } else {
-    books.filter((book) => {return book.title.indexOf(q);});
+    books.filter((book) => {return book.title.indexOf(q) >= 0  ;});
     res.json(books);
   }
 };
