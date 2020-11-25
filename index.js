@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const cors = require('cors');
 
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -44,9 +45,8 @@ const port = process.env.PORT || 3000;
 app.set("views", "./views");
 app.set("view engine", "pug");
 
+app.use(cors());
 app.use(express.static("public"));
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
